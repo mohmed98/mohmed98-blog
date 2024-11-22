@@ -8,4 +8,4 @@ You should also check out [my newsletter](https://cassidoo.co/newsletter), or my
 
 Enjoy! -->
 
-//Todo
+Under progress, you can reach me at mohamedatta447@gmail.com
