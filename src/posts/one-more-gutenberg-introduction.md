@@ -3,9 +3,9 @@ layout: ../layouts/BlogPost.astro
 title: One More Gutenberg Introduction
 slug: one-more-gutenberg-introduction
 description: >-
-  This is an example blog!
+  Here I am writing one more Gutenberg introduction because no one can stop me! Haha. Jokes aside, this article will serve as a documentation-style fast walkthrough on how to create a Gutenberg block from my eyes and point of view.
 tags:
-  - personal
+  - WordPress
 added: "May 01 2024"
 ---
 
