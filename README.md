@@ -1,50 +1,79 @@
-# Cassidy's blog template
+# mohmed98-blog
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/eab04209-5f7f-41ed-a8dd-c45a9ebb1834/deploy-status)](https://app.netlify.com/sites/blahg/deploys)
+Personal blog built with [Astro](https://astro.build), supporting both plain Markdown posts and interactive MDX tutorial posts with live React + [GSAP](https://gsap.com/) animations.
 
-Hello, welcome. This is a blog ("blahg" is the proper spelling for Chicagoans) template. It's built with [Astro](https://astro.build), and uses [TinaCMS](https://tina.io) to edit the content!
+## Tech stack
 
-![cover](https://github.com/cassidoo/blahg/assets/1454517/b56ff04f-9499-48e7-be62-d9b422c4287d)
+- **Astro 4** — static site generator
+- **MDX** — Markdown + JSX for interactive tutorial posts
+- **React 19** — powers interactive components inside MDX posts
+- **GSAP** — animation library used in live tutorial demos
+- **Sitemap + RSS** — auto-generated from all posts
 
-## See the blahg
+## Commands
 
-[blahg.netlify.app](https://blahg.netlify.app/)
+Run from the root of the project:
 
-## To use the template
+| Command             | Action                                           |
+| :------------------ | :----------------------------------------------- |
+| `npm install`       | Install dependencies                             |
+| `npm run dev`       | Start local dev server at `localhost:4321`       |
+| `npm run build`     | Build production site to `./dist/`               |
+| `npm run preview`   | Preview the production build locally             |
 
-- Connect to your chosen hosting provider (see Deploy to Netlify button below if you want to go that route, otherwise use the GitHub template button above and pick a different one)
-- Make an account at [tina.io](https://tina.io/)
-- Add your TinaCMS keys (see below)
-- Update `astro.config.mjs` with your domain
-- Edit `src/config.js`
-- Add your URL in line 1 of `public/robots.txt`
-- Add your links in `src/components/Header.astro`
-- Update the intro in `pages/about.md`
-- Edit the images in `public/` (optional)
-- Edit whatever tags you want in `tina/config.js` (optional)
+## Writing a post
 
-After this, you can add your content to `src/posts` with Markdown files, or with TinaCMS by going to `yoururl.com/admin`!
+### Markdown post (plain writing)
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/cassidoo/blahg)
+Create a `.md` file in `src/posts/` with this frontmatter:
 
-And finally, please ping me (via social media, or in a GitHub Issue, or whatever) if you use this template! I would love to see your writing and subscribe to your RSS feed!
+```md
+---
+layout: ../layouts/BlogPost.astro
+title: My Post Title
+slug: my-post-title
+description: A short summary of the post.
+tags:
+  - personal
+added: 2026-06-01T10:00:00.000Z
+---
 
-## Run it yourself
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                          | Action                                                        |
-| :------------------------------- | :------------------------------------------------------------ |
-| `npm install`                    | Installs dependencies                                         |
-| `npm run dev`                    | Starts local dev server at `localhost:4321`                   |
-| `npx tinacms dev -c 'astro dev'` | Manually run local server if the regular command doesn't work |
-| `npm run build`                  | Build your production site to `./dist/`                       |
-| `npm run preview`                | Preview your build locally, before deploying                  |
-
-You go to `localhost:4321/admin/index.html` to see the CMS and use it. If you want to clone this for yourself, you'll need a `.env.development` file that has the following in it:
-
+Your content here.
 ```
-TINACLIENTID=<from tina.io>
-TINATOKEN=<from tina.io>
-TINASEARCH=<from tina.io>
+
+### MDX tutorial post (with live demos)
+
+Create a `.mdx` file in `src/posts/` with the same frontmatter, then import and embed React components inline:
+
+```mdx
+---
+layout: ../layouts/BlogPost.astro
+title: My Tutorial
+slug: my-tutorial
+description: A tutorial with a live demo.
+tags:
+  - technical
+added: 2026-06-01T10:00:00.000Z
+---
+
+import MyDemo from "../components/MyDemo.jsx";
+
+## Introduction
+
+Write your tutorial content here.
+
+<MyDemo client:load />
+
+Explanation continues after the demo.
 ```
+
+The `client:load` directive tells Astro to hydrate the React component in the browser so animations and interactions work. Without it the component renders as static HTML only.
+
+## Adding interactive components
+
+Place React components in `src/components/` as `.jsx` files. See [src/components/GsapDemo.jsx](src/components/GsapDemo.jsx) as a reference — it uses `useEffect` + GSAP to animate an element on mount.
+
+## Available tags
+
+Add any string as a tag in frontmatter. Tag pages are generated automatically at `/tag/<name>`.
+
