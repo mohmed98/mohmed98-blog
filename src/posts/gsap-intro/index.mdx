@@ -6,7 +6,7 @@ description: A walkthrough of turning this blog from plain Markdown into a place
 tags:
   - technical
   - learning
-added: 2026-16
+added: 2026-06-16T21:00:00.000Z
 ---
 
 import GsapDemo from "./GsapDemo.jsx";
@@ -40,7 +40,7 @@ The migration was surprisingly small:
 1. **Removed Tina CMS** — This maybe dumb move, but for current stack, I am relaying on GH as my source. It may come back in the future.
 2. **Added `@astrojs/mdx` + `@astrojs/react`** — To use JSX inside markdown.
 3. **Upgraded Astro to v6** — got the latest features and better MDX support.
-4. **Changed glob patterns** from `*.md` to `*.{md,mdx}` — both types get listed, routed, tagged, and sitemapped identically.
+4. **Changed glob patterns** from `*.md` to `*.{md,mdx}` — both types get listed, routed, and tagged identically.
 5. **Dropped RSS** — Currently not needed for this site. 
 
 ## Now the Demo
@@ -50,3 +50,5 @@ This is me when I press enter on a file on Mac expecting it to open.
 <GsapDemo client:load />
 
 It's fun, right? I will be working on explaining how to do it in an upcoming article, hopefully within a decade from now.
+
+By the way you can roast fork here: https://github.com/mohmed98/mohmed98-blog (Any feedback I will get I will say I am working on it already haha)
