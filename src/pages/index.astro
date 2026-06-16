@@ -10,7 +10,7 @@ import { Content as About } from "./about.md";
 import getTags from "../scripts/getTags";
 
 const posts = Object.values(
-	import.meta.glob("../posts/*.{md,mdx}", { eager: true })
+	import.meta.glob("../posts/**/*.{md,mdx}", { eager: true })
 );
 
 const tags = getTags(posts);

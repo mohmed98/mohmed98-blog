@@ -8,7 +8,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
 import getTags from "../scripts/getTags";
 
 const posts = Object.values(
-	import.meta.glob("../posts/*.{md,mdx}", { eager: true })
+	import.meta.glob("../posts/**/*.{md,mdx}", { eager: true })
 );
 
 const tags = getTags(posts);

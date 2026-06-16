@@ -2,7 +2,7 @@
 // Credit to @rachsmithcodes for this function
 export async function getStaticPaths() {
 	const posts = Object.values(
-		import.meta.glob("../../posts/*.{md,mdx}", { eager: true })
+		import.meta.glob("../../posts/**/*.{md,mdx}", { eager: true })
 	);
 
 	return posts.map((post) => {

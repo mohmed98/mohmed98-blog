@@ -1,5 +1,5 @@
 ---
-layout: ../layouts/BlogPost.astro
+layout: ../../layouts/BlogPost.astro
 title: One More Gutenberg Introduction
 slug: one-more-gutenberg-introduction
 description: >-
@@ -40,7 +40,7 @@ There is a few actually
 * It's been a while since I last created Gutenberg blocks.
 * I want to have this base available so that when I work on more complex blocks, I can reference it and avoid starting from scratch each time.
 
-![](../../public/assets/one-more-gutenberg-introduction-media/lets-begin-meme.webp)
+![](/assets/one-more-gutenberg-introduction-media/lets-begin-meme.webp)
 
 ## What Gutenberg Means
 
@@ -48,7 +48,7 @@ This might not seem like a strange question, especially since it's included in t
 
 Before we continue, it's essential to know that Johannes Gutenberg was a German craftsman and inventor who developed a method of printing using movable type.
 
-![An illustration of a man writing at a desk, reflecting the era of Johannes Gutenberg and his movable type printing method.](../../public/assets/one-more-gutenberg-introduction-media/original-gutenberg.png)
+![An illustration of a man writing at a desk, reflecting the era of Johannes Gutenberg and his movable type printing method.](/assets/one-more-gutenberg-introduction-media/original-gutenberg.png)
 
 Image from [https://www.britannica.com/biography/Johannes-Gutenberg](https://www.britannica.com/biography/Johannes-Gutenberg) to be enhanced
 
@@ -99,7 +99,7 @@ You can check the Node [download page](https://nodejs.org/en/download/package-ma
 
 On your Local app's website page, you'll find an "Site Shell" button under the website name.
 
-![A dashboard UI displaying the moatta local website](../../public/assets/one-more-gutenberg-introduction-media/Local-dashbaord.png)
+![A dashboard UI displaying the moatta local website](/assets/one-more-gutenberg-introduction-media/Local-dashbaord.png)
 
 This will open the terminal in the public directory.
 
@@ -115,21 +115,21 @@ Then run
 npx @wordpress/create-block my-first-block
 ```
 
-![Screenshot of a command line interface displaying various commands and outputs in the command prompt window.  ](../../public/assets/one-more-gutenberg-introduction-media/running-create-block-script.png)
+![Screenshot of a command line interface displaying various commands and outputs in the command prompt window.  ](/assets/one-more-gutenberg-introduction-media/running-create-block-script.png)
 
 ### Try the plugin
 
 Check plugin page on dashboard
 
-![](../../public/assets/one-more-gutenberg-introduction-media/Showing-new-block-in-plugin-dashbaord-page.png)
+![](/assets/one-more-gutenberg-introduction-media/Showing-new-block-in-plugin-dashbaord-page.png)
 
 Activate and go to the editor and search the block 'My first block'
 
-![](../../public/assets/one-more-gutenberg-introduction-media/showing-block-in-the-availbale-blocks-in-the-editor.png)
+![](/assets/one-more-gutenberg-introduction-media/showing-block-in-the-availbale-blocks-in-the-editor.png)
 
 Add the block and check both Editor and Frontend
 
-![](../../public/assets/one-more-gutenberg-introduction-media/Showing-new-block-on-both-editor-and-frontend.png)
+![](/assets/one-more-gutenberg-introduction-media/Showing-new-block-on-both-editor-and-frontend.png)
 
 ### Checking the files
 
@@ -148,13 +148,13 @@ For our scope, we are checking the `my-first-block` folder. It has three folder 
 * `package.json`: This one includes not just your plugin’s name and description but also essential information like CLI scripts to run, dependencies, and devDependencies. It handles a lot of important stuff, and since it's in JSON, it's easy to read and edit. For more details, read this part of the [Gutenberg handbook](https://developer.wordpress.org/block-editor/getting-started/fundamentals/file-structure-of-a-block/#package-json) and then dive into the NPM [doc](https://docs.npmjs.com/cli/v10/configuring-npm/package-json).
 * `readme.txt`: This is the markdown file for your plugin information to be displayed on the repository page.
 
-![](../../public/assets/one-more-gutenberg-introduction-media/Block-files.png)
+![](/assets/one-more-gutenberg-introduction-media/Block-files.png)
 
 #### Build Folder
 
 talk about build files
 
-![](../../public/assets/one-more-gutenberg-introduction-media/Build-Files.png)
+![](/assets/one-more-gutenberg-introduction-media/Build-Files.png)
 
 #### Node modules folder
 
@@ -164,7 +164,7 @@ No need to check this folder; it's like a gaming backpack/jacket that can hold u
 
 Give idea what is taht
 
-![](../../public/assets/one-more-gutenberg-introduction-media/src-files.png)
+![](/assets/one-more-gutenberg-introduction-media/src-files.png)
 
 ![](https://i0.wp.com/developer.wordpress.org/files/2023/11/file-structure-block.png?ssl=1)
 
@@ -184,7 +184,7 @@ npm run start
 
 You should be seeing something similar to this
 
-![](../../public/assets/one-more-gutenberg-introduction-media/starting-dev-env.png)
+![](/assets/one-more-gutenberg-introduction-media/starting-dev-env.png)
 
 Now open 'src/edit.js' in the your code editor
 
@@ -194,7 +194,7 @@ A React component is a reusable piece of UI that can be used throughout a React 
 
 In the provided `Edit` component example, it is a functional component that returns a paragraph element with some text. It uses the `useBlockProps` hook to apply necessary properties and the `__` function for translation.
 
-![](../../public/assets/one-more-gutenberg-introduction-media/edit.js-code.png)
+![](/assets/one-more-gutenberg-introduction-media/edit.js-code.png)
 
 ### Play with what we created
 

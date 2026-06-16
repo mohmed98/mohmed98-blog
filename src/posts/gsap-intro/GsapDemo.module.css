@@ -1,0 +1,89 @@
+.wrapper {
+    padding: 2rem 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.wall {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: #333;
+    border-radius: 2px;
+}
+
+.circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #f5c842;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #333;
+    font-weight: bold;
+    font-size: 1.5rem;
+    user-select: none;
+    box-shadow: 0 4px 12px rgba(245, 200, 66, 0.4);
+    margin-left: 8px;
+}
+
+/* Center the emoji inside the circle */
+.emoji-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* The Emoji Face — positioning container for eyes & mouth */
+.headbang-emoji {
+    position: relative;
+    width: 48px;
+    height: 48px;
+}
+
+/* The Squeezed Eye (<) */
+.headbang-emoji::before,
+.eye {
+    content: '';
+    position: absolute;
+    top: 35%;
+    left: 26%;
+    width: 12px;
+    height: 3.5px;
+    background-color: #111;
+    border-radius: 2px;
+    transform: rotate(307deg);
+}
+
+.headbang-emoji::before {
+    transform: rotate(235deg);
+    top: 50%;
+}
+
+/* The Frustrated Mouth — two strokes */
+.mouth {
+    content: '';
+    position: absolute;
+    bottom: 18%;
+    left: -6%;
+    width: 10px;
+    height: 3.5px;
+    background-color: #111;
+    border-radius: 2px;
+    transform: rotate(0deg);
+}
+
+.mouth::after {
+    content: '';
+    position: absolute;
+    top: 4px;
+    left: 6px;
+    width: 13px;
+    height: 3.5px;
+    background-color: #111;
+    border-radius: 2px;
+    transform: rotate(-130deg);
+}

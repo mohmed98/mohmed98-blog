@@ -1,0 +1,52 @@
+---
+layout: ../../layouts/BlogPost.astro
+title: How This Blog Learned to Animate — Adding MDX, React & GSAP
+slug: gsap-intro
+description: A walkthrough of turning this blog from plain Markdown into a place where you can write fast articles and embed live interactive demos — all inside the same post.
+tags:
+  - technical
+  - learning
+added: 2026-16
+---
+
+import GsapDemo from "./GsapDemo.jsx";
+
+
+## A note of thanks
+
+Before anything else: huge thanks to [Cassidy Williams](https://cassidoo.co/) for the blog template that got this whole thing off the ground. She is a big inspiration, a cool developer, and most importantly, she has great jokes at the end of her newsletters.
+
+## Motivation - why writing this blog
+
+Ok, one of the most talented web teachers out there is [Ahmad Shadeed](https://ishadeed.com/). If you don't know him, I envy you, because you're about to experience his great content for the first time.
+
+What I really liked about Ahmed's work, you can play with the things he teaches you and apply them on the spot. The was the first spark for me, I wanted to have this feature to have React apps inside my blog.
+
+The second spark was I love web animation and wanted to learn and talk about it, and it's complex topic(or not not sure yet haha). But talking about animation without actually showing it would be like my collage courses slides, I didn't like that.
+
+# The current state of progress
+
+I wanted a format where:
+
+- **Quick thoughts** Write Markdown, publish. (As if I even do that 😂)
+- **Interactive tutorials** Embed live demos inside the tutorial, right where they're relevant.
+
+Think of [Ahmad Shadeed's](https://ishadeed.com) articles — like [The Gap](https://ishadeed.com/article/the-gap/)
+
+## What changed under the hood
+
+The migration was surprisingly small:
+
+1. **Removed Tina CMS** — This maybe dumb move, but for current stack, I am relaying on GH as my source. It may come back in the future.
+2. **Added `@astrojs/mdx` + `@astrojs/react`** — To use JSX inside markdown.
+3. **Upgraded Astro to v6** — got the latest features and better MDX support.
+4. **Changed glob patterns** from `*.md` to `*.{md,mdx}` — both types get listed, routed, tagged, and sitemapped identically.
+5. **Dropped RSS** — Currently not needed for this site. 
+
+## Now the Demo
+
+This is me when I press enter on a file on Mac expecting it to open.
+
+<GsapDemo client:load />
+
+It's fun, right? I will be working on explaining how to do it in an upcoming article, hopefully within a decade from now.
