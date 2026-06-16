@@ -1,5 +1,5 @@
 ---
-layout: ../layouts/BlogPost.astro
+layout: ../../layouts/BlogPost.astro
 title: Appreciating Logitech
 slug: appreciating-logitech
 description: >-

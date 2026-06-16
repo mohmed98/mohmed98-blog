@@ -6,7 +6,9 @@ import Footer from "../components/Footer.astro";
 import Tags from "../components/Tags.astro";
 import getTags from "../scripts/getTags";
 
-const posts = await Astro.glob("../posts/*.md");
+const posts = Object.values(
+	import.meta.glob("../posts/**/*.{md,mdx}", { eager: true })
+);
 const allTags = getTags(posts);
 
 let {
